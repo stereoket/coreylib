@@ -909,9 +909,9 @@ class clNode implements Iterator {
 					function coreylib_toggle(a) {
 						$(a).parent().children('blockquote').toggle();
 						if ($(a).children('img').attr('src').match(/add.png$/))
-							$(a).children('img').attr('src', 'http://github.com/collegeman/coreylib/blob/master/docs/img/delete.png');
+							$(a).children('img').attr('src', 'http://github.com/collegeman/coreylib/blob/master/web/img/delete.png');
 						else if ($(a).children('img').attr('src').match(/delete.png$/))
-							$(a).children('img').attr('src', 'http://github.com/collegeman/coreylib/blob/master/docs/img/add.png');
+							$(a).children('img').attr('src', 'http://github.com/collegeman/coreylib/blob/master/web/img/add.png');
 					}
 				</script>
 			<?php
@@ -919,7 +919,7 @@ class clNode implements Iterator {
 			self::$jqueryOut = true;
 		}
 		
-		if ($source) echo '<blockquote style="background-color:#fff; color:black; border:1px solid black; padding: 10px; margin: 0px 0px 10px 0px;"><a style="font-weight:bold; text-decoration:none;" href="javascript:;" onclick="coreylib_toggle(this);"><img src="http://github.com/collegeman/coreylib/blob/master/docs/img/add.png" border="0" /></a> '.$source;
+		if ($source) echo '<blockquote style="background-color:#fff; color:black; border:1px solid black; padding: 10px; margin: 0px 0px 10px 0px;"><a style="font-weight:bold; text-decoration:none;" href="javascript:;" onclick="coreylib_toggle(this);"><img src="http://github.com/collegeman/coreylib/blob/master/web/img/add.png" border="0" /></a> '.$source;
 		
 		$node = $this->get($path, $limit);
 		if (is_array($node)) {
