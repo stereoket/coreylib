@@ -1,0 +1,28 @@
+<?php
+clAPI::configure(array(
+// allow coreylib to report errors in your script and your use of Web services
+"display_errors" => false, 
+// set to allow coreylib to talk to you about its caching and feed parsing
+"debug" => false, 
+// set to true to prevent all caching
+"nocache" => false, 
+// maximum number of times to try to download a resource
+"max_download_tries" => 3, 
+// set to true to get verbose reporting from the parser (not recommended)
+"trace" => false 
+));
+
+clCache::configure(array(
+// set to true and coreylib won't try to create its cache table
+'nocreate' => false, 
+// server name or ip where mysql is hosted
+'mysql_host' => 'DB_HOST', 
+// username for accessing the database
+'mysql_username' => 'DB_USER', 
+// password for accessing the database
+'mysql_password' => 'DB_PASSWORD',
+// name of the database in which to store the cache table
+'mysql_database' => 'DB_NAME', 
+// a prefix to append to the cache table name
+'mysql_table_prefix' => 'coreylib_' 
+));

@@ -1,0 +1,49 @@
+Changes in coreylib since 1.0.3
+
+v1.0.10 (beta) December 11, 2009
+
+* New feature: clAPI::curlopt - arbitrarily set any CURL option
+
+v1.0.9 (beta) September 3, 2009
+
+* New feature: clMashup - For grouping and sorting disparate API results
+* New feature: clMashup relies on multi_curl
+
+v1.0.8 (beta) August 2009
+
+* New feature: clAWSECS - A wrapper for signing AWS ECS requests
+
+v1.0.7 (beta) May 8, 2009
+
+* New feature: clAPI::post - uses an HTTP POST to retrieve content from the endpoint
+* New feature: Now using CURL for all content retrieval
+* Fixed bug: Couldn't download from Technorati because they require a User-Agent header
+* New feature: User-Agent header: "coreylib"
+
+v1.0.6 (beta) - not released
+
+* New feature: configuration option "display_errors" turns on error output, now separate from "debug" mode 
+* New feature: clNode::timeSince(timestamp)
+* New feature: when a child element cannot be found, coreylib should look for an attribute by that name before returning null
+* New feature: clNode::print_r and clAPI::print_r, so that @coreyweb can resume his former process
+
+v1.0.5 (beta) January 3, 2009
+
+* Fixed bug: parameters entered with clAPI::param were ignored when download was not authenticated (yeah, yeah)
+
+v1.0.4 (beta) January 3, 2009
+
+* Fixed bug: when invoking clAPI::parse, if you left the $cacheFor parameter empty, it would never download the feed
+* Fixed bug: file-based caching wasn't working at all
+* Fixed bug: parameters entered with clAPI::param were ignored when download was authenticated (authentication configured using clAPI::basicAuth($username, $password))
+
+v1.0.3 (beta) December 28, 2008
+
+* Added the CHANGELOG.txt file... tee-hee!
+* Fixed bug in clCache that was resulting in nothing ever being cached (doh!)
+* Fixed some weird formatting in clNode::info
+* Added support for "last" phrases as parameters for controlling the cache, e.g., "last Monday" or "last Month"
+* clNode::renderTwitterLink was ignoring capital letters
+* In debuggin mode, usernames and passwords used with clAPI::basicAuth were being printed to the screen (doh!)
+* Added some debugging statements to identify download method used
+* No more multiple round trips to the DB or the file system in a single request

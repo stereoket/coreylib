@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="coreylib" default="dist" basedir=".">
+
+	<target name="dist">
+		<tar destfile="${basedir}/coreylib.tar">
+			<tarfileset dir="${basedir}/src">
+				<exclude name="**/.coreycache" />
+				<exclude name="**/.svn" />
+			</tarfileset>
+		</tar>
+	
+		<gzip src="coreylib.tar" destfile="coreylib.tgz" />
+		
+		<delete file="coreylib.tar" />
+	
+	</target>
+
+
+</project>
