@@ -1,0 +1,102 @@
+#Getting Started 
+
+##What is coreylib?
+
+coreylib is a universal [RESTful](http://en.wikipedia.org/wiki/Representational_State_Transfer) API client, written for PHP 5.  We get to call it _universal_ because it will work with virtually any XML or JSON API Web service.  And it's free, as in free beer.
+
+The coreylib workflow allows you to quickly prototype production-ready mash-ups without the overhead of learning someone else's API client wrapper.  Learn to use coreylib once, and you'll be able to use it for every other mash-up project you do.
+
+##Requirements
+
+* PHP 5
+* A basic understanding of XML
+* A wee-little bit of patience
+* A fresh cup of joe
+
+##Getting started
+
+###Step 1: Get the library
+Download the latest release from the Featured Downloads in the sidebar on this page.  The download is a GZIP-archived tarball, and contains the following files
+
+	./coreylib.php // the core library
+	./coreylib-cfg.php.sample // a sample config file
+	./coreylib-cfg.php.wordpress // a sample config file for use within WordPress
+	./LICENSE(coreylib).txt // your coreylib license, GNU GPL v2
+	./CHANGELOG.txt // an incomplete history of library changes
+
+###Step 2: Add coreylib to your project
+
+Adding coreylib to your PHP project is as easy as including the library into your code.
+
+	<?php
+	require_once('coreylib.php');
+
+###Step 3: Grab a feed
+
+These days everyone wants to add Twitter content to their sites, so we’ll use Twitter as our example.  We’ll start with a basic example: the personal timeline.
+
+	// create a new instance of the coreylib clAPI class
+	$api = new clAPI(
+  		'http://twitter.com/statuses/user_timeline.xml?screen_name=collegeman'
+	);
+ 	
+	// parse the feed!
+	$api->parse('10 minutes');
+
+	// analyze your feed with the info() method:
+	$api->info();
+
+You can learn more about the code above in [Analyzing Feeds].  You can learn more about the _10 minutes_ parameter value in [Caching].
+
+###Step 4: Walk the feed, and spit out some data
+
+Step 4 is a giant leap, but this is the meat people! Now that we have some data loaded, it’s time to generate some output. Here’s an example of using the Twitter feed to produce some pretty content for your site:
+
+	<ul>
+		<?php 
+ 			/**
+		 	 * @param $text The text of a Twitter status update
+		 	 * @return The status with typical linking to users and URLs
+		 	 */
+			function tweet($text) {
+		  		$text = preg_replace('#http://[^ ]+#i', '<a href="\\0">\\0</a>', $text);
+		  		$text = preg_replace('/@([a-z0-9_]+)/i', '<a href="http://twitter.com/\\1">\\0</a>', $text);
+		  		return $text;
+			}
+ 
+			// foreach status update in the feed
+			foreach($api->get('status') as $status) {
+		  		// start a list item
+		  		echo '<li>';
+		  		// spit out the text of the status update
+		  		echo tweet($status->get('text'));
+		  		// create a link to the tweet
+		  		$author = $status->get('user/screen_name');
+		  		$id = $status->get('id');
+		  		echo "&nbsp;<a href=\"http://twitter.com/$author/statuses/$id\">&raquo;</a>";
+		  		// close the list item
+		  		echo '</li>';
+			}
+ 		?>
+	</ul>
+
+Now I’m sure we set your head spinning with that one. The key to understanding the example above is learning more about [Queries].
+
+##Who is coreylib for?
+
+coreylib was developed for Web designers.  You'll need to know a little bit about PHP - minimally, you'll need to know how to get PHP code into a production environment (so that you can test your stuff), and some basic knowledge on [http://www.php.net/manual/en/language.control-structures.php control structures] (if, for, foreach, while, etc.) is essential.
+
+But coreylib is sophisticated enough for Web developers, too. With support for API feed aggregation, caching, and multi-curl built-in, coreylib is an effective component for developing complex mash-ups.
+
+##The story
+
+So, this dude named [@coreyweb](http://twitter.com/coreyweb ) has a [personal website](http://coreyweb.com).  He coded it all by himself using PHP, and he was very proud.  Then one day he got it in his head to make his page more dynamic, with streams from *Twitter*, and *Flickr*, and *RSS* from his favorite blogs.
+
+"This will be easy," he thought to himself.  "Why, with all these services providing their own clients, adding those feeds to my site will be a snap!"  But soon, he discovered the truth: *web service API wrappers suck.*
+
+Each service's feed is different, and each client has a unique author.  Nobody is singing from the same sheet, and *none of them* cache their data feeds!
+
+So @coreyweb reached out to this other dude named [@collegeman](http://twitter.com/collegeman), and together they hatched a plan to make things easier.  "Forget having to learn some crazy API for each new service," they proclaimed.  "Let's write a universal web services client with caching built-in!"
+
+Thus, with little fuss, coreylib was born. And you can use it in your projects for free.
+
