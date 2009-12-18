@@ -84,7 +84,7 @@ Now I’m sure we set your head spinning with that one. The key to understanding
 
 ##Who is coreylib for?
 
-coreylib was developed for Web designers.  You'll need to know a little bit about PHP - minimally, you'll need to know how to get PHP code into a production environment (so that you can test your stuff), and some basic knowledge on [http://www.php.net/manual/en/language.control-structures.php control structures] (if, for, foreach, while, etc.) is essential.
+coreylib was developed for Web designers.  You'll need to know a little bit about PHP - minimally, you'll need to know how to get PHP code into a production environment (so that you can test your stuff), and some basic knowledge on [if, for, foreach, while, etc.](http://www.php.net/manual/en/language.control-structures.php control structures) is essential.
 
 But coreylib is sophisticated enough for Web developers, too. With support for API feed aggregation, caching, and multi-curl built-in, coreylib is an effective component for developing complex mash-ups.
 
