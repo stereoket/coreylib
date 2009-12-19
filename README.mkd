@@ -8,7 +8,7 @@ The coreylib workflow allows you to quickly prototype production-ready mash-ups 
 
 ##Requirements
 
-* PHP 5
+* PHP 5.2+ with [Client URL (cURL) Library](http://www.php.net/manual/en/curl.installation.php) installed and enabled 
 * A basic understanding of XML
 * A wee-little bit of patience
 * A fresh cup of joe
@@ -16,13 +16,13 @@ The coreylib workflow allows you to quickly prototype production-ready mash-ups 
 ##Getting started
 
 ###Step 1: Get the library
-Download the latest release from the Featured Downloads in the sidebar on this page.  The download is a GZIP-archived tarball, and contains the following files
+Download the latest release from the Featured Downloads in the sidebar on this page.  The download is a GZIP-archived tarball, and contains only what you need to use coreylib:
 
 	./coreylib.php // the core library
 	./coreylib-cfg.php.sample // a sample config file
 	./coreylib-cfg.php.wordpress // a sample config file for use within WordPress
-	./LICENSE(coreylib).txt // your coreylib license, GNU GPL v2
-	./CHANGELOG.txt // an incomplete history of library changes
+	
+If you want to download the complete source including our integration tests, [download the github project](http://github.com/collegeman/coreylib/archives/master).
 
 ###Step 2: Add coreylib to your project
 
