@@ -3,7 +3,7 @@
  * coreylib
  * Add universal Web service parsing and view caching to your PHP project.
  * @author Aaron Collegeman aaroncollegeman.com
- * @version 1.1.0
+ * @version 1.1.1
  *
  * Copyright (C)2008-2010 Collegeman.net, LLC.
  *
@@ -847,7 +847,7 @@ class clNode implements Iterator {
 			foreach($elements as $i => $el) {
 				if ($limit != null && $i == $limit)
 					break;
-				$nodes[] = new clNode($el);
+				$nodes[] = new clNode($el, null, $this->__default_prefix, $this->__default_ns);
 			}
 			return $nodes;
 		}

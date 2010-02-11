@@ -1,5 +1,9 @@
 Changes in coreylib since 1.0.3
 
+v1.1.1 February 11, 2010
+
+There was a bug in the XPATH implementation... wah, wah.
+
 v1.1.0 February 10, 2010
 
 No more beta! We're live baby.
