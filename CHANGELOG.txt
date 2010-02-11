@@ -1,5 +1,13 @@
 Changes in coreylib since 1.0.3
 
+v1.1.0 February 10, 2010
+
+No more beta! We're live baby.
+
+* New feature: now supporting XPATH! clAPI::xpath and clNode::xpath
+* New feature: full out only one element using XPATH with clAPI::first and clNode::first
+* Cleaned up the project
+
 v1.0.10 (beta) December 11, 2009
 
 * New feature: clAPI::curlopt - arbitrarily set any CURL option

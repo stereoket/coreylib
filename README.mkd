@@ -2,13 +2,13 @@
 
 ##What is coreylib?
 
-coreylib is a universal [RESTful](http://en.wikipedia.org/wiki/Representational_State_Transfer) API client, written for PHP 5.  We get to call it _universal_ because it will work with virtually any XML or JSON API Web service.  And it's free, as in free beer.
+coreylib is a universal Web service API client, written for PHP 5.  We get to call it _universal_ because it will work with virtually any XML or JSON API Web service.  And it's free, as in free beer.
 
 The coreylib workflow allows you to quickly prototype production-ready mash-ups without the overhead of learning someone else's API client wrapper.  Learn to use coreylib once, and you'll be able to use it for every other mash-up project you do.
 
 ##Requirements
 
-* PHP 5.2+ with [Client URL (cURL) Library](http://www.php.net/manual/en/curl.installation.php) installed and enabled 
+* PHP 5.2+ with [Client URL (cURL) Library](http://www.php.net/manual/en/curl.installation.php) and [SimpleXML](http://www.php.net/manual/en/book.simplexml.php) installed and enabled
 * A basic understanding of XML
 * A wee-little bit of patience
 * A fresh cup of joe
