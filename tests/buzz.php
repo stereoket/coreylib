@@ -16,7 +16,7 @@
 		<!-- use xpath to grab all of the <entry> elements -->
 		<ul>
 		<?php foreach($api->xpath('//feed:entry') as $entry): ?>
-			<!-- for each entry element, grab the alternate link and the title -->
+			<!-- for each entry element, grab the alternate link and the content -->
 			<?php 
 				$content = $entry->first('feed:content')->__toString();
 				$content = substr($content, 5, strlen($content)-5);
