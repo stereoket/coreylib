@@ -3,7 +3,7 @@
  * coreylib
  * Add universal Web service parsing and view caching to your PHP project.
  * @author Aaron Collegeman aaroncollegeman.com
- * @version 1.1.2
+ * @version 1.1.3
  *
  * Copyright (C)2008-2010 Collegeman.net, LLC.
  *
@@ -545,8 +545,10 @@ class clAPI {
 		// accept all SSL certificates:
 		curl_setopt($this->ch, CURLOPT_SSL_VERIFYPEER, false);
 		
-		if ($this->username && $this->password) 
+		if ($this->username && $this->password) {
+			curl_setopt($this->ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 			curl_setopt($this->ch, CURLOPT_USERPWD, "$this->username:$this->password");
+		}
 		
 		curl_setopt($this->ch, CURLOPT_HTTPHEADER, array('Expect:'));
 		

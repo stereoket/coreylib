@@ -1,5 +1,13 @@
 Changes in coreylib since 1.0.3
 
+v1.1.3 March 10, 2010
+
+There was a bug in basic authentication over cURL.
+
+v1.1.2 March 10, 2010
+
+There was a bug in namespace assignment.
+
 v1.1.1 February 11, 2010
 
 There was a bug in the XPATH implementation... wah, wah.
